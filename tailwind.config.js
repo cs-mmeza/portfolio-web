@@ -7,10 +7,13 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    borderRadius: {
+      'md': '0.375rem',
+      '4xl': '2rem',
+      'full': '9999px',
+    },
     fontSize: {
-      'xs': '.75rem',
       'sm': '.875rem',
-      'tiny': '.875rem',
        'md': '1rem',
        'lg': '1.125rem',
        'xl': '1.25rem',

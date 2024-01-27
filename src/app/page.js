@@ -58,6 +58,7 @@ export default function Home() {
             </ul>
           </nav>
           <div className=" text-center p-5">
+            <div className=" ">
             <p className={styles.conv}>I am</p>
             <h1 className={styles.name}>
               Mauricio Meza
@@ -65,6 +66,7 @@ export default function Home() {
             <h2 className={styles.title}>
               Software Developer.
             </h2>
+            </div>
             <p className={styles.paragraph}>
               a skilled <span className="text-teal-500">Software developer</span> with a rich background in Mechanical Design and Manufacturing, boasting 7 years of engineering excellence. My journey in software development has been a fascinating transition, and I'm excited to share my experiences and creations with you.
             </p>
@@ -72,7 +74,7 @@ export default function Home() {
               From conceptualizing intricate designs to crafting elegant code, I thrive on the synergy of creativity and precision. Join me as I navigate the realms of software development, combining my engineering background with a passion for building innovative solutions.
             </p>
           </div>
-          <div className={styles.icons}>
+          <div className={styles.social_icons}>
             <a href="https://www.linkedin.com/in/mauricio-meza/?locale=en_US">
               <AiFillLinkedin />
             </a>
@@ -88,14 +90,14 @@ export default function Home() {
           </div>
         </section>
         <section className="relative" id="skills">
-          <p className="text-center text-gray-500">Explore my</p>
+          <p className="text-center text-gray-500">Check my</p>
           <h2 className={styles.title}>
             Tech Stack
           </h2>
           <div className="flex justify-center flex-col lg:flex gap-10">
             <div className={styles.experience_details_container}>
               <div className={styles.about_containers}>
-                <div className={styles.cards}>
+                <div className="cards">
                   <h3 className={styles.experience_title}>Front-End Development</h3>
                   <div>
                     <h4 className={styles.experience_subtitle}>Languages & Frameworks:</h4>
@@ -129,7 +131,7 @@ export default function Home() {
                     </article>
                   </div>
                 </div>
-                <div className={styles.cards}>
+                <div className="cards">
                   <h3 className={styles.experience_title}>Back-End Development</h3>
                   <div>
                     <h4 className={styles.experience_subtitle}>Languages & Frameworks:</h4>
@@ -153,10 +155,6 @@ export default function Home() {
                       <IoIosCheckmarkCircle className="mr-2" alt="experience icon" />
                       <h4>Spring</h4>
                     </article>
-                    <article className="flex">
-                      <IoIosCheckmarkCircle className="mr-2" alt="experience icon" />
-                      <h4>TypeScript</h4>
-                    </article>
                     <h4 className={styles.experience_subtitle}>Version Control:</h4>
                     <article className="flex">
                       <IoIosCheckmarkCircle className="mr-2" alt="experience icon" />
@@ -177,7 +175,7 @@ export default function Home() {
                     </article>
                   </div>
                 </div>
-                <div className={styles.cards}>
+                <div className="cards">
                   <h3 className={styles.experience_title}>Data Processing & Analysis</h3>
                   <div>
                     <h4 className={styles.experience_subtitle}>Database Management</h4>
@@ -188,6 +186,10 @@ export default function Home() {
                     <article className="flex text-md text-left">
                       <IoIosCheckmarkCircle className="flex mr-2" alt="experience icon" />
                       <h4 className="">Relational Database</h4>
+                    </article>
+                    <article className="flex">
+                      <IoIosCheckmarkCircle className="mr-2" alt="experience icon" />
+                      <h4>BigQuery</h4>
                     </article>
                     <h4 className={styles.experience_subtitle}>Data Processing</h4>
                     <article className="flex">
@@ -203,23 +205,89 @@ export default function Home() {
                       <IoIosCheckmarkCircle className="mr-2" alt="experience icon" />
                       <h4>TableaU</h4>
                     </article>
-                    <article className="flex">
-                      <IoIosCheckmarkCircle className="mr-2" alt="experience icon" />
-                      <h4>BigQuery</h4>
-                    </article>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section className="py-20" id="portfolio">
-          <div>
-            <h3 className="text-3xl py-1">Portfolio</h3>
+        <section className="relative" id="portfolio">
+          <div className={styles.head}>
+            <p className="text-center text-gray-500">Explore my recent</p>
+            <h2 className={styles.title}>Projects</h2>
           </div>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/2 flex-1">
-              <Image src={web1} alt="portfolio image 1" className=" rounded-lg object-cover" width={"100%"} height={"100%"} />
+          <div className="experience_details_container">
+            <div className="cards">
+              <div className="article-container">
+                <Image 
+                  src={web1} 
+                  alt="portfolio image 1" 
+                  className=" rounded-lg object-cover" 
+                  width={"100%"} height={"100%"} />
+              </div>
+              <h2> First Project</h2>
+              <div className="basis-1/2 flex-1">
+              <button 
+                  className="btn_outliner"
+                  onClick="location.href= https://github.com/"
+                >
+                  GitHub
+                </button>
+                <button 
+                  className="btn_outliner"
+                  onClick="location.href= https://github.com/"
+                >
+                  Demo
+                </button>
+              </div>
+            </div>
+            <div className="cards">
+              <div className="article-container">
+                <Image 
+                  src={web1} 
+                  alt="portfolio image 1" 
+                  className=" rounded-lg object-cover" 
+                  width={"100%"} height={"100%"} />
+              </div>
+              <h2> First Project</h2>
+              <div className="basis-1/2 flex-1">
+              <button 
+                  className="btn_outliner"
+                  onClick="location.href= https://github.com/"
+                >
+                  GitHub
+                </button>
+                <button 
+                  className="btn_outliner"
+                  onClick="location.href= https://github.com/"
+                >
+                  Demo
+                </button>
+              </div>
+            </div>
+            <div className="cards">
+              <div className="article-container">
+                <Image 
+                  src={web1} 
+                  alt="portfolio image 1" 
+                  className=" rounded-lg object-cover" 
+                  width={"100%"} height={"100%"} />
+              </div>
+              <h2> First Project</h2>
+              <div className="basis-1/2 flex-1">
+              <button 
+                  className="btn_outliner"
+                  onClick="location.href= https://github.com/"
+                >
+                  GitHub
+                </button>
+                <button 
+                  className="btn_outliner"
+                  onClick="location.href= https://github.com/"
+                >
+                  Demo
+                </button>
+              </div>
             </div>
           </div>
         </section>
