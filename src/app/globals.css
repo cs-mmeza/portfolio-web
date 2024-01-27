@@ -4,16 +4,10 @@
 
 html,
 
-
 body {
   padding: 0;
   margin: 0;
   font-family: Roboto, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  @apply transition-colors duration-200;
 }
 
 a {
@@ -21,8 +15,19 @@ a {
   text-decoration: none;
 }
 
+* {
+  @apply transition-colors duration-200;
+}
 
+.cards {
+  @apply p-6 rounded-4xl border-2 border-gray-400 border-solid text-center;
+}
 
+.btn {
+  @apply font-bold py-2 px-4 rounded-md bg-teal-500 text-white hover:bg-teal-700;
+}
 
+.btn_outliner {
+  @apply bg-transparent hover:bg-teal-500 text-teal-700 font-semibold hover:text-white py-2 px-4 border border-teal-500 hover:border-transparent rounded-md;
 
-
+}
