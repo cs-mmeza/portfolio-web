@@ -58,7 +58,9 @@ export default function Home() {
             </ul>
           </nav>
           <div className=" text-center p-5">
+
             <div className=" ">
+
             <p className={styles.conv}>I am</p>
             <h1 className={styles.name}>
               Mauricio Meza
@@ -66,6 +68,7 @@ export default function Home() {
             <h2 className={styles.title}>
               Software Developer.
             </h2>
+
             </div>
             <p className={styles.paragraph}>
               a skilled <span className="text-teal-500">Software developer</span> with a rich background in Mechanical Design and Manufacturing, boasting 7 years of engineering excellence. My journey in software development has been a fascinating transition, and I'm excited to share my experiences and creations with you.
