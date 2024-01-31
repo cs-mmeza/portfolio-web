@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     borderRadius: {
       'md': '0.375rem',
+      'lg': '0.5rem',
       '4xl': '2rem',
       'full': '9999px',
     },
@@ -27,6 +28,13 @@ module.exports = {
     extend: {
       fontFamily:{
         'Cedarville':'Cedarville',
+      },
+      backgroundSize: {
+        'size-200': '200% 200%',
+      },
+      backgroundPosition: {
+        'pos-0': '0% 0%',
+        'pos-100': '100% 100%',
       },
     },
   },
