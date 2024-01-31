@@ -67,14 +67,14 @@ export default function Home() {
                 Mauricio Meza
               </h1>
               <h2 className={styles.title}>
-                Software Developer.
+                Full-Stack Developer.
               </h2>
             </div>
             <p className={styles.paragraph}>
-              a skilled <span className="text-teal-500">Software developer</span> with a rich background in Mechanical Design and Manufacturing, boasting 7 years of engineering excellence. My journey in software development has been a fascinating transition, and I'm excited to share my experiences and creations with you.
+              I am a skilled <span className="text-teal-500">Full-Stack developer</span> with a rich background in Mechanical Design and Manufacturing, boasting 7 years of engineering excellence, my journey in software development has been a fascinating transition. With experience as a <span className="text-teal-500"> Back-End developer</span> in my last job, I've honed my abilities in creating robust and efficient systems.
             </p>
             <p className={styles.paragraph}>
-              From conceptualizing intricate designs to crafting elegant code, I thrive on the synergy of creativity and precision. Join me as I navigate the realms of software development, combining my engineering background with a passion for building innovative solutions.
+              From conceptualizing intricate designs to crafting elegant code, I thrive on the synergy of creativity and precision. I'm excited to share my experiences and creations with you as I navigate the realms of software development, combining my <span className="text-teal-500">engineering background</span> with a passion for building innovative solutions.
             </p>
           </div>
           <div className={styles.social_icons}>
