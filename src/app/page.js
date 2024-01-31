@@ -61,6 +61,7 @@ export default function Home() {
             </ul>
           </nav>
           <div className=" text-center p-5">
+
             <div className=" ">
               <p className={styles.conv}>I am</p>
               <h1 className={styles.name}>
@@ -69,6 +70,7 @@ export default function Home() {
               <h2 className={styles.title}>
                 Full-Stack Developer.
               </h2>
+
             </div>
             <p className={styles.paragraph}>
               I am a skilled <span className="text-teal-500">Full-Stack developer</span> with a rich background in Mechanical Design and Manufacturing, boasting 7 years of engineering excellence, my journey in software development has been a fascinating transition. With experience as a <span className="text-teal-500"> Back-End developer</span> in my last job, I've honed my abilities in creating robust and efficient systems.
