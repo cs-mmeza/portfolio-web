@@ -245,7 +245,7 @@ export default function Home() {
                     GitHub
                   </button>
                   <button
-                    className="btn_projects btn ml-5 md:ml-7 lg:ml-10"
+                    className="btn_projects btn ml-10 md:ml-20 lg:ml-30"
                     onClick="location.href='https://github.com/'"
                   >
                     Demo
@@ -269,7 +269,7 @@ export default function Home() {
                     GitHub
                   </button>
                   <button
-                    className="btn_projects btn ml-5 md:ml-7 lg:ml-10"
+                    className="btn_projects btn ml-10 md:ml-20 lg:ml-30"
                     onClick="location.href= 'https://github.com/'"
                   >
                     Demo
@@ -293,7 +293,7 @@ export default function Home() {
                     GitHub
                   </button>
                   <button
-                    className="btn_projects btn ml-5 md:ml-7 lg:ml-10"
+                    className="btn_projects btn ml-10 md:ml-20 lg:ml-30"
                     onClick="location.href= https://github.com/"
                   >
                     Demo
