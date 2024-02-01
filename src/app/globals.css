@@ -28,7 +28,7 @@ a {
 /* }bg-gradient-to-r from-cyan-500 to-teal-500 text-white */
 }
 
-.btn_text_portfolio {
-  @apply  font-semibold py-2 px-4 rounded-md;
+.btn_projects {
+  @apply  font-semibold py-2 px-4 rounded-md w-28 md:w-32 lg:w-36;
 
 }

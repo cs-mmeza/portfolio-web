@@ -16,7 +16,6 @@ import styles from "./page.module.css";
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [icon, setIcon] = useState(<BsFillSunFill />);
-
   
 
   useEffect(() => {
@@ -51,12 +50,12 @@ export default function Home() {
                 </a>
               </ul>
               <li>
-                <button 
-                  className=" px-4 py-1 rounded-md ml-8 btn"
-                  href="#"
+                <a
+                  href="https://drive.google.com/file/d/18pzQ0TlbrxJRurrU54L2TrQWSWMWfXi1/view?usp=sharing" 
+                  className=" px-4 py-2 rounded-md ml-8 btn"
                 >
                   Resume
-                </button>
+                </a>
               </li>
             </ul>
           </nav>
@@ -70,12 +69,11 @@ export default function Home() {
               <h2 className={styles.title}>
                 Full-Stack Developer.
               </h2>
-
             </div>
-            <p className={styles.paragraph}>
+            <p className={styles.summary}>
               I am a skilled <span className="text-teal-500">Full-Stack developer</span> with a rich background in Mechanical Design and Manufacturing, boasting 7 years of engineering excellence, my journey in software development has been a fascinating transition. With experience as a <span className="text-teal-500"> Back-End developer</span> in my last job, I've honed my abilities in creating robust and efficient systems.
             </p>
-            <p className={styles.paragraph}>
+            <p className={styles.summary}>
               From conceptualizing intricate designs to crafting elegant code, I thrive on the synergy of creativity and precision. I'm excited to share my experiences and creations with you as I navigate the realms of software development, combining my <span className="text-teal-500">engineering background</span> with a passion for building innovative solutions.
             </p>
           </div>
@@ -237,9 +235,9 @@ export default function Home() {
                     width={"100%"} height={"100%"} />
                 </div>
                 <h2 className={styles.project_title}> First Project</h2>
-                <div className=" basis-1/2 flex-1 grid gap-8 grid-cols-2 px-10">
+                <div className=" basis-1/2 flex-1 px-10">
                 <button
-                  className="btn_text_portfolio btn" 
+                  className="btn_projects btn" 
                   type="button" 
                   onClick={(e) => {e.preventDefault();
                     window.location.href='https://github.com/';
@@ -247,7 +245,7 @@ export default function Home() {
                     GitHub
                   </button>
                   <button
-                    className="btn_text_portfolio btn"
+                    className="btn_projects btn ml-5 md:ml-7 lg:ml-10"
                     onClick="location.href='https://github.com/'"
                   >
                     Demo
@@ -263,15 +261,15 @@ export default function Home() {
                     width={"100%"} height={"100%"} />
                 </div>
                 <h2 className={styles.project_title}> Second Project</h2>
-                <div className=" basis-1/2 flex-1 grid gap-8 grid-cols-2 px-10">
+                <div className=" basis-1/2 flex-1 px-10">
                   <button
-                    className="btn_text_portfolio btn"
+                    className="btn_projects btn"
                     onClick="location.href= 'https://github.com/'"
                   >
                     GitHub
                   </button>
                   <button
-                    className="btn_text_portfolio btn"
+                    className="btn_projects btn ml-5 md:ml-7 lg:ml-10"
                     onClick="location.href= 'https://github.com/'"
                   >
                     Demo
@@ -287,15 +285,15 @@ export default function Home() {
                     width={"100%"} height={"100%"} />
                 </div>
                 <h2 className={styles.project_title}> Third Project</h2>
-                <div className=" basis-1/2 flex-1 grid gap-8 grid-cols-2 px-10">
+                <div className=" basis-1/2 flex-1 px-10 items-center">
                   <button
-                    className="btn_text_portfolio btn"
+                    className="btn_projects btn px-3"
                     onClick="location.href= https://github.com/"
                   >
                     GitHub
                   </button>
                   <button
-                    className="btn_text_portfolio btn"
+                    className="btn_projects btn ml-5 md:ml-7 lg:ml-10"
                     onClick="location.href= https://github.com/"
                   >
                     Demo

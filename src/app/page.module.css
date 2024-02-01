@@ -22,8 +22,8 @@
   @apply text-center text-gray-500 pb-4 dark:text-gray-400;
 }
 
-.paragraph {
-  @apply text-md pb-5 leading-8 text-gray-800 md:text-xl max-w-lg mx-auto dark:text-gray-50;
+.summary {
+  @apply text-md pb-5 leading-8 text-gray-800 md:text-xl lg:max-w-2xl max-w-lg mx-auto dark:text-gray-50;
 }
 
 .social_icons {
