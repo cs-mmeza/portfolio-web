@@ -15,7 +15,7 @@
 }
 
 .title {
-  @apply text-gray-700 text-center text-3xl pb-20 md:text-3xl space-y-0 dark:text-gray-100;
+  @apply text-gray-700 text-center text-3xl pb-5 md:text-3xl space-y-0 dark:text-gray-100;
 }
 
 .conv {
@@ -23,11 +23,11 @@
 }
 
 .summary {
-  @apply text-md pb-5 leading-8 text-gray-800 md:text-xl lg:max-w-2xl max-w-lg mx-auto dark:text-gray-50;
+  @apply text-md leading-8 text-gray-800 md:text-xl lg:max-w-2xl max-w-lg mx-auto dark:text-gray-50;
 }
 
 .social_icons {
-  @apply justify-center flex text-5xl gap-x-16 pb-10 text-gray-600 dark:text-gray-500;
+  @apply justify-center flex text-5xl gap-x-16 py-5 text-gray-600 dark:text-gray-500;
 }
 
 .content {
@@ -35,7 +35,7 @@
 }
 
 .profilePicture { 
-  @apply relative rounded-full w-80 h-80 mt-10 mb-20 mx-auto overflow-hidden md:w-96 md:h-96;
+  @apply relative rounded-full w-80 h-80 mt-10 mb-10 mx-auto overflow-hidden md:w-96 md:h-96;
 }
 
 .color-container {

@@ -29,6 +29,6 @@ a {
 }
 
 .btn_projects {
-  @apply  font-semibold py-2 px-4 rounded-md w-24 md:w-32 lg:w-36;
+  @apply  font-semibold py-2 px-4 rounded-md w-36 md:w-44 lg:w-48;
 
 }
