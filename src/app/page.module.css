@@ -1,0 +1,82 @@
+.main {
+  @apply bg-white px-5 md:px-20 lg:px-40 dark:bg-gray-900;
+}
+
+.header{
+  @apply text-lg font-Cedarville dark:text-gray-100;
+}
+
+.name {
+  @apply text-5xl text-teal-600 space-y-0 font-medium md:text-6xl;
+}
+
+.head{
+  @apply pt-20;
+}
+
+.title {
+  @apply text-gray-700 text-center text-3xl pb-5 md:text-3xl space-y-0 dark:text-gray-100;
+}
+
+.conv {
+  @apply text-center text-gray-500 space-y-0 dark:text-gray-400;
+}
+
+.summary {
+  @apply text-md leading-8 text-gray-800 md:text-xl lg:max-w-2xl max-w-lg mx-auto dark:text-gray-50;
+}
+
+.social_icons {
+  @apply justify-center flex text-5xl gap-x-16 py-5 text-gray-600 dark:text-gray-500;
+}
+
+.content {
+  @apply text-md py-5 leading-8 text-gray-800;
+}
+
+.profilePicture { 
+  @apply relative rounded-full w-80 h-80 my-10 mx-auto overflow-hidden md:w-96 md:h-96;
+}
+
+.color-container {
+  @apply bg-white border-gray-400;
+}
+
+.experience_title {
+  @apply text-teal-600 text-xl mb-4 font-medium;
+}
+
+.experience_subtitle {
+  @apply font-medium text-left my-4 dark:text-gray-100;
+}
+  
+.experience_details_container {
+  @apply flex justify-center flex-col;
+}
+
+.article-container {
+  @apply flex text-start flex-wrap flex-row gap-10 justify-around;
+}
+
+.skills_containers {
+  @apply flex grid grid-cols-1 gap-4 dark:text-gray-200 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.projects_containers {
+  @apply flex grid grid-cols-1 gap-4 dark:text-gray-200;
+}
+
+.button {
+  @apply mx-4;
+}
+
+.project_title {
+  @apply m-4 text-center text-gray-700 dark:text-gray-100;
+}
+
+@font-face {
+  font-family: "Cedarville";
+  src: url("../../public/CedarvilleCursive-Regular.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

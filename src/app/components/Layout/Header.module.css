@@ -1,9 +1,0 @@
-.nav {
-    @apply pt-10 pb-0 md:py-10 mb-10 flex justify-between;
-  }
-
-.header{
-    @apply text-lg font-Cedarville dark:text-gray-100;
-  }
-
-  
