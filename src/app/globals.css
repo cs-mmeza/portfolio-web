@@ -19,20 +19,8 @@ a {
   @apply transition-colors duration-200;
 }
 
-.title {
-  @apply text-gray-700 text-center text-3xl pb-5 md:text-3xl space-y-0;
-}
-
-.dark .title {
-  @apply text-gray-100;
-}
-
-.details_container {
-  @apply flex justify-center flex-col;
-}
-
-.article_container {
-  @apply flex text-start flex-wrap flex-row gap-10 justify-around;
+.navigation {
+  @apply pt-10 pb-0 md:py-10 mb-10 flex justify-between;
 }
 
 .cards {
@@ -41,6 +29,7 @@ a {
 
 .btn {
   @apply text-white bg-gradient-to-r transition-all duration-500 from-cyan-700 via-emerald-500 to-teal-500 bg-size-200 bg-pos-0 hover:bg-pos-100;
+/* }bg-gradient-to-r from-cyan-500 to-teal-500 text-white */
 }
 
 .btn_projects {
