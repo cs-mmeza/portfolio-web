@@ -1,9 +1,8 @@
 import styles from "./Hero.module.css";
-import Header from "../Layout/Header.js";
-
+import Header from "../Layout/Header";
 import Image from "next/image";
-
 import maudev from "/public/mau-meza.jpg";
+
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 
 function Hero() {
