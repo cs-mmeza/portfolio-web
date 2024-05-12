@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
-import { DarkModeProvider } from "@/app/components/context/DarkModeContext";
-import Main from "./components/Main";
+import { DarkModeProvider } from "@/components/context/DarkModeContext";
+import Main from "../components/Main";
 
 export default function Home() {
   return (

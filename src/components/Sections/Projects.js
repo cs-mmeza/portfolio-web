@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import web1 from "/public/web1.png";
 import web2 from "/public/mark-konig-workinprogress.jpg";
+import web3 from "/public/Threads_demo_picture.png"
 
 import styles from "./Projects.module.css"
 
@@ -17,6 +18,35 @@ function Projects() {
             <div className="cards">
               <div className="article-container">
                 <Image
+                  src={web3}
+                  alt="portfolio image 1"
+                  className="rounded-lg object-cover"
+                  width={"100%"} height={"100%"} />
+              </div>
+              <h2 className={styles.project_title}> Threads Clone App</h2>
+              <div className="px-5 items-center flex-1">
+                  <button
+                    className="text_btn_projects btn mx-1" 
+                    type="button" 
+                    onClick={(e) => {e.preventDefault();
+                      window.location.href='https://github.com/cs-mmeza/Threads';
+                      }}
+                      >
+                      GitHub Repo
+                  </button>
+                  <button
+                    className="text_btn_projects btn"
+                    onClick={(e) => {e.preventDefault();
+                      window.location.href='https://threads-six-zeta.vercel.app';
+                    }}
+                    >
+                    Demo
+                  </button>
+              </div>
+            </div>
+            <div className="cards">
+              <div className="article-container">
+                <Image
                   src={web1}
                   alt="portfolio image 1"
                   className="rounded-lg object-cover"
@@ -25,7 +55,7 @@ function Projects() {
               <h2 className={styles.project_title}> Goals list app</h2>
               <div className=" basis-1/2 flex-1 px-10">
               <button
-                className="btn_projects btn" 
+                className="text_btn_projects btn" 
                 type="button" 
                 onClick={(e) => {e.preventDefault();
                   window.location.href='https://github.com/cs-mmeza/goals_app';
@@ -51,7 +81,7 @@ function Projects() {
               <h2 className={styles.project_title}> API Goals List </h2>
               <div className=" basis-1/2 flex-1 px-10">
                 <button
-                  className="btn_projects btn"
+                  className="text_btn_projects btn"
                   onClick={(e) => {e.preventDefault();
                     window.location.href='https://github.com/cs-mmeza/api_goals_app';
                     }}>
@@ -78,7 +108,7 @@ function Projects() {
               <h2 className={styles.project_title}>Business website</h2>
               <div className=" basis-1/2 flex-1 px-10 items-center">
                 <button
-                  className="btn_projects btn px-3"
+                  className="text_btn_projects btn px-3"
                   onClick={(e) => {e.preventDefault();
                     window.location.href='https://github.com/cs-mmeza/norte-arq-demo';
                     }}>
