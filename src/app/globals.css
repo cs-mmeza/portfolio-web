@@ -40,10 +40,10 @@ a {
 }
 
 .btn {
-  @apply text-white bg-gradient-to-r transition-all duration-500 from-cyan-700 via-emerald-500 to-teal-500 bg-size-200 bg-pos-0 hover:bg-pos-100;
+  @apply rounded-md text-white bg-gradient-to-r transition-all duration-500 from-cyan-700 via-emerald-500 to-teal-500 bg-size-200 bg-pos-0 hover:bg-pos-100;
 }
 
-.btn_projects {
-  @apply  font-semibold py-2 px-4 rounded-md w-36 md:w-44 lg:w-48;
+.text_btn_projects {
+  @apply  2xl:text-xl font-semibold py-2 px-3 w-36 md:w-44 lg:w-48 ;
 
 }

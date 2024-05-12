@@ -4,7 +4,7 @@
 
   @font-face {
     font-family: "Cedarville";
-    src: url("../../../public/CedarvilleCursive-Regular.ttf") format('truetype');
+    src: url("../../public/CedarvilleCursive-Regular.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
   }

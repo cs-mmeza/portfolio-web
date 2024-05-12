@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";   
-import { useDarkMode, toggleDarkMode } from "@/app/components/context/DarkModeContext";
+import { useDarkMode } from "@/components/context/DarkModeContext";
 
 
 function Header() {
