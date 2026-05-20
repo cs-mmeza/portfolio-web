@@ -1,0 +1,65 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export interface Props {
+  title: string;
+  date: Date;
+  description: string;
+  tags: string[];
+  slug: string;
+  wordCount?: number;
+}
+
+const { title, date, description, tags, slug, wordCount = 800 } = Astro.props;
+const readingTime = Math.ceil(wordCount / 200);
+
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const currentIndex = allPosts.findIndex(p => p.id === slug);
+const prev = allPosts[currentIndex + 1] ?? null;
+const next = allPosts[currentIndex - 1] ?? null;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <a href="/blog" class="text-xs font-mono text-muted hover:text-bright transition-colors">
+      ← Back to Blog
+    </a>
+
+    <header class="mt-6 mb-10 pb-8 border-b border-accent/20">
+      <div class="flex items-center gap-3 mb-4">
+        {tags.map(tag => (
+          <span class="text-xs font-mono bg-accent/10 border border-accent/20 px-2 py-0.5 rounded text-muted">
+            {tag}
+          </span>
+        ))}
+      </div>
+      <h1 class="text-3xl font-bold text-primary mb-3">{title}</h1>
+      <p class="text-sm text-muted font-mono">
+        {date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        · {readingTime} min read
+      </p>
+    </header>
+
+    <div class="prose prose-invert prose-sm max-w-none
+      prose-headings:font-bold prose-headings:text-primary
+      prose-p:text-muted prose-p:leading-relaxed
+      prose-strong:text-primary prose-a:text-bright">
+      <slot />
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-accent/20 flex justify-between gap-4">
+      {prev ? (
+        <a href={`/blog/${prev.id}`} class="text-sm text-muted hover:text-bright transition-colors">
+          ← {prev.data.title}
+        </a>
+      ) : <span />}
+      {next ? (
+        <a href={`/blog/${next.id}`} class="text-sm text-muted hover:text-bright transition-colors text-right">
+          {next.data.title} →
+        </a>
+      ) : <span />}
+    </div>
+  </article>
+</BaseLayout>

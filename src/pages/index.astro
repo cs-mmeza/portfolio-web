@@ -1,17 +1,143 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 
+const recentPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
+const recentWork = (await getCollection('work', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+
+const recentRobotics = (await getCollection('robotics', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Home" description="Mauricio Meza — Mechanical Designer & Mechatronics Engineer, CSWP certified, Phoenix AZ.">
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 pt-20 pb-16">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div class="flex-1">
+        <div class="inline-flex items-center gap-2 bg-accent/20 border border-accent/40 rounded px-3 py-1 mb-6">
+          <img src="/images/cswp-badge.svg" alt="CSWP Certified" class="h-5 w-5 object-contain" />
+          <span class="text-xs font-mono text-bright">CSWP Certified</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold text-primary leading-tight mb-3">
+          Mauricio Meza
+        </h1>
+        <p class="text-xl text-muted font-mono mb-2">
+          Mechanical Designer · Mechatronics Engineer
+        </p>
+        <p class="text-sm text-muted mb-6">
+          Phoenix, AZ · MS Robotics candidate, ASU Spring 2027
+        </p>
+        <p class="text-base text-muted max-w-xl leading-relaxed mb-8">
+          7+ years designing fixtures, structural assemblies, and manufacturing tooling.
+          BSEE in Mechatronics with a decade of automation and controls background.
+          Bridging precision mechanical design with robotics and autonomous systems.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/work"
+            class="inline-flex items-center justify-center px-6 py-3 bg-accent hover:bg-bright text-white font-semibold rounded transition-colors"
+          >
+            View Mechanical Design Work
+          </a>
+          <a
+            href="/robotics"
+            class="inline-flex items-center justify-center px-6 py-3 border border-accent/60 hover:border-bright text-primary hover:text-bright font-semibold rounded transition-colors"
+          >
+            View Robotics Projects
+          </a>
+        </div>
+      </div>
+
+      <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-surface border-2 border-accent/40 flex items-center justify-center flex-shrink-0">
+        <span class="text-4xl font-bold text-accent">MM</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Currently -->
+  <section class="max-w-6xl mx-auto px-6 py-10 border-t border-accent/20">
+    <h2 class="text-xs font-mono text-muted uppercase tracking-widest mb-4">Currently</h2>
+    <ul class="flex flex-col gap-2 text-sm text-muted">
+      <li class="flex gap-2"><span class="text-bright">→</span> Mechanical Designer at [Current Employer] — Phoenix, AZ</li>
+      <li class="flex gap-2"><span class="text-bright">→</span> Preparing ASU MS Robotics & Autonomous Systems application (EE concentration) — Spring 2027</li>
+      <li class="flex gap-2"><span class="text-bright">→</span> Deepening ROS 2, control theory, and Python robotics stack</li>
+    </ul>
+  </section>
+
+  <!-- Recent design work -->
+  {recentWork.length > 0 && (
+    <section class="max-w-6xl mx-auto px-6 py-10 border-t border-accent/20">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xs font-mono text-muted uppercase tracking-widest">Recent Design Work</h2>
+        <a href="/work" class="text-xs text-bright hover:underline">View all →</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {recentWork.map(project => (
+          <a
+            href={`/work/${project.id}`}
+            class="bg-surface border border-accent/20 rounded-lg p-5 hover:border-bright/40 transition-colors group"
+          >
+            <p class="text-xs font-mono text-muted mb-2">{project.data.industry} · {project.data.year}</p>
+            <h3 class="text-sm font-semibold text-primary group-hover:text-bright transition-colors mb-2">{project.data.title}</h3>
+            <p class="text-xs text-muted">{project.data.tools.slice(0, 3).join(' · ')}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Recent robotics -->
+  {recentRobotics.length > 0 && (
+    <section class="max-w-6xl mx-auto px-6 py-10 border-t border-accent/20">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xs font-mono text-muted uppercase tracking-widest">Recent Robotics Work</h2>
+        <a href="/robotics" class="text-xs text-bright hover:underline">View all →</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {recentRobotics.map(project => (
+          <a
+            href={`/robotics/${project.id}`}
+            class="bg-surface border border-accent/20 rounded-lg p-5 hover:border-bright/40 transition-colors group"
+          >
+            <p class="text-xs font-mono text-muted mb-2">{project.data.industry} · {project.data.year}</p>
+            <h3 class="text-sm font-semibold text-primary group-hover:text-bright transition-colors mb-2">{project.data.title}</h3>
+            <p class="text-xs text-muted">{project.data.tools.slice(0, 3).join(' · ')}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Recent blog posts -->
+  {recentPosts.length > 0 && (
+    <section class="max-w-6xl mx-auto px-6 py-10 border-t border-accent/20">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xs font-mono text-muted uppercase tracking-widest">Recent Writing</h2>
+        <a href="/blog" class="text-xs text-bright hover:underline">View all →</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        {recentPosts.map(post => (
+          <a
+            href={`/blog/${post.id}`}
+            class="flex items-start gap-4 group"
+          >
+            <span class="text-xs font-mono text-muted mt-0.5 w-24 flex-shrink-0">
+              {post.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+            </span>
+            <span class="text-sm text-primary group-hover:text-bright transition-colors">{post.data.title}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+</BaseLayout>

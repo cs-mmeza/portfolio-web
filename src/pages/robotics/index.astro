@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('robotics', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Robotics Projects"
+  description="ROS 2, Python, computer vision, and autonomous systems projects as part of my MS Robotics path at ASU."
+>
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold text-primary mb-3">Robotics Projects</h1>
+      <p class="text-muted max-w-xl">
+        Autonomous navigation, kinematics, 3D perception, and deep learning projects
+        built while deepening my path toward ASU's MS Robotics & Autonomous Systems program.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {projects.map(project => (
+        <a
+          href={`/robotics/${project.id}`}
+          class="bg-surface border border-accent/20 rounded-lg p-6 hover:border-bright/40 transition-colors group"
+        >
+          <div class="flex items-start justify-between mb-3">
+            <p class="text-xs font-mono text-muted">{project.data.industry}</p>
+            <p class="text-xs font-mono text-muted">{project.data.year}</p>
+          </div>
+          <h2 class="text-lg font-semibold text-primary group-hover:text-bright transition-colors mb-2">
+            {project.data.title}
+          </h2>
+          <p class="text-sm text-muted mb-4">{project.data.role}</p>
+          <div class="flex flex-wrap gap-2">
+            {project.data.tools.map(tool => (
+              <span class="text-xs font-mono bg-accent/10 border border-accent/20 px-2 py-0.5 rounded text-muted">
+                {tool}
+              </span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

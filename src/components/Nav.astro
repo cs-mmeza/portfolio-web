@@ -1,0 +1,56 @@
+---
+const navLinks = [
+  { href: '/work', label: 'Design Work' },
+  { href: '/robotics', label: 'Robotics' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-surface border-b border-accent/30 sticky top-0 z-50">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex flex-col leading-tight">
+      <span class="font-bold text-lg text-primary tracking-tight">Mauricio Meza</span>
+      <span class="text-xs text-muted font-mono">Mechanical Designer · Mechatronics Engineer</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-6">
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class={`text-sm font-medium transition-colors hover:text-bright ${
+              currentPath.startsWith(href) ? 'text-bright border-b border-bright pb-0.5' : 'text-muted'
+            }`}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <button
+      id="mobile-menu-toggle"
+      class="md:hidden text-muted hover:text-primary"
+      aria-label="Toggle menu"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-accent/20 px-6 py-4">
+    <ul class="flex flex-col gap-4">
+      {navLinks.map(({ href, label }) => (
+        <li><a href={href} class="text-sm text-muted hover:text-primary">{label}</a></li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

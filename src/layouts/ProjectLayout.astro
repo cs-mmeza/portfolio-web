@@ -1,0 +1,74 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export interface Props {
+  title: string;
+  role: string;
+  year: number;
+  tools: string[];
+  industry: string;
+  collection: 'work' | 'robotics';
+  slug: string;
+}
+
+const { title, role, year, tools, industry, collection, slug } = Astro.props;
+const indexHref = `/${collection}`;
+const indexLabel = collection === 'work' ? 'Design Work' : 'Robotics';
+
+const allProjects = (await getCollection(collection))
+  .sort((a, b) => a.data.order - b.data.order);
+const currentIndex = allProjects.findIndex(p => p.id === slug);
+const prev = allProjects[currentIndex - 1] ?? null;
+const next = allProjects[currentIndex + 1] ?? null;
+---
+
+<BaseLayout title={title}>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <a href={indexHref} class="text-xs font-mono text-muted hover:text-bright transition-colors">
+      ← Back to {indexLabel}
+    </a>
+
+    <div class="mt-6 mb-10 pb-8 border-b border-accent/20">
+      <h1 class="text-3xl font-bold text-primary mb-4">{title}</h1>
+      <dl class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div>
+          <dt class="text-xs font-mono text-muted uppercase mb-1">Role</dt>
+          <dd class="text-sm text-primary">{role}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-mono text-muted uppercase mb-1">Year</dt>
+          <dd class="text-sm text-primary">{year}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-mono text-muted uppercase mb-1">Industry</dt>
+          <dd class="text-sm text-primary">{industry}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-mono text-muted uppercase mb-1">Tools</dt>
+          <dd class="text-sm text-primary">{tools.join(', ')}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="prose prose-invert prose-sm max-w-none
+      prose-headings:font-bold prose-headings:text-primary
+      prose-p:text-muted prose-p:leading-relaxed
+      prose-strong:text-primary prose-a:text-bright">
+      <slot />
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-accent/20 flex justify-between gap-4">
+      {prev ? (
+        <a href={`/${collection}/${prev.id}`} class="text-sm text-muted hover:text-bright transition-colors">
+          ← {prev.data.title}
+        </a>
+      ) : <span />}
+      {next ? (
+        <a href={`/${collection}/${next.id}`} class="text-sm text-muted hover:text-bright transition-colors text-right">
+          {next.data.title} →
+        </a>
+      ) : <span />}
+    </div>
+  </article>
+</BaseLayout>
