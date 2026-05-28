@@ -2,29 +2,36 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-surface border-t border-accent/30 mt-16">
-  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-    <p class="text-muted text-sm">
-      © {year} Mauricio Meza · Phoenix, AZ
-    </p>
+<footer class="mt-24 border-t border-white/[0.06]">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex flex-col items-center md:items-start gap-1">
+      <span class="text-sm font-medium text-primary/70">Mauricio Meza</span>
+      <span class="text-xs text-muted font-mono">Phoenix, AZ · {year}</span>
+    </div>
+
     <div class="flex items-center gap-6">
       <a
         href="https://linkedin.com/in/cs-mmeza"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-muted hover:text-bright text-sm transition-colors"
+        class="text-xs font-mono text-muted hover:text-bright transition-colors duration-200 tracking-wide uppercase"
       >
         LinkedIn
       </a>
+      <span class="w-px h-3 bg-white/10" />
       <a
         href="https://github.com/cs-mmeza"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-muted hover:text-bright text-sm transition-colors"
+        class="text-xs font-mono text-muted hover:text-bright transition-colors duration-200 tracking-wide uppercase"
       >
         GitHub
       </a>
-      <a href="/contact" class="text-muted hover:text-bright text-sm transition-colors">
+      <span class="w-px h-3 bg-white/10" />
+      <a
+        href="/contact"
+        class="text-xs font-mono text-muted hover:text-bright transition-colors duration-200 tracking-wide uppercase"
+      >
         Contact
       </a>
     </div>

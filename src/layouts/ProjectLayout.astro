@@ -24,41 +24,46 @@ const next = allProjects[currentIndex + 1] ?? null;
 ---
 
 <BaseLayout title={title}>
-  <article class="max-w-3xl mx-auto px-6 py-12">
-    <a href={indexHref} class="text-xs font-mono text-muted hover:text-bright transition-colors">
-      ← Back to {indexLabel}
+  <article class="max-w-3xl mx-auto px-6 py-14">
+
+    <a href={indexHref} class="inline-flex items-center gap-1.5 text-xs font-mono text-muted hover:text-bright transition-colors duration-200">
+      <svg class="w-3 h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 12L6 8l4-4"/></svg>
+      Back to {indexLabel}
     </a>
 
-    <div class="mt-6 mb-10 pb-8 border-b border-accent/20">
-      <h1 class="text-3xl font-bold text-primary mb-4">{title}</h1>
-      <dl class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="mt-8 mb-10 pb-8 border-b border-white/[0.06]">
+      <p class="text-[10px] font-mono text-accent uppercase tracking-widest mb-3">{industry}</p>
+      <h1 class="text-3xl font-bold text-primary tracking-tight mb-6">{title}</h1>
+      <dl class="grid grid-cols-2 md:grid-cols-3 gap-5">
         <div>
-          <dt class="text-xs font-mono text-muted uppercase mb-1">Role</dt>
-          <dd class="text-sm text-primary">{role}</dd>
+          <dt class="text-[10px] font-mono text-muted uppercase tracking-widest mb-1">Role</dt>
+          <dd class="text-sm text-muted-2">{role}</dd>
         </div>
         <div>
-          <dt class="text-xs font-mono text-muted uppercase mb-1">Year</dt>
-          <dd class="text-sm text-primary">{year}</dd>
+          <dt class="text-[10px] font-mono text-muted uppercase tracking-widest mb-1">Year</dt>
+          <dd class="text-sm text-muted-2">{year}</dd>
         </div>
-        <div>
-          <dt class="text-xs font-mono text-muted uppercase mb-1">Industry</dt>
-          <dd class="text-sm text-primary">{industry}</dd>
-        </div>
-        <div>
-          <dt class="text-xs font-mono text-muted uppercase mb-1">Tools</dt>
-          <dd class="text-sm text-primary">{tools.join(', ')}</dd>
+        <div class="col-span-2 md:col-span-1">
+          <dt class="text-[10px] font-mono text-muted uppercase tracking-widest mb-2">Tools</dt>
+          <dd class="flex flex-wrap gap-1.5">
+            {tools.map(tool => (
+              <span class="text-[10px] font-mono bg-accent/[0.08] border border-accent/[0.15] px-2 py-0.5 rounded text-accent/80">
+                {tool}
+              </span>
+            ))}
+          </dd>
         </div>
       </dl>
     </div>
 
     <div class="prose prose-invert prose-sm max-w-none
-      prose-headings:font-bold prose-headings:text-primary
-      prose-p:text-muted prose-p:leading-relaxed
-      prose-strong:text-primary prose-a:text-bright">
+      prose-headings:font-bold prose-headings:text-primary prose-headings:tracking-tight
+      prose-p:text-muted-2 prose-p:leading-relaxed
+      prose-strong:text-primary prose-a:text-bright prose-a:no-underline hover:prose-a:underline">
       <slot />
     </div>
 
-    <div class="mt-16 pt-8 border-t border-accent/20 flex justify-between gap-4">
+    <div class="mt-16 pt-8 border-t border-white/[0.06] flex justify-between gap-4">
       {prev ? (
         <a href={`/${collection}/${prev.id}`} class="text-sm text-muted hover:text-bright transition-colors">
           ← {prev.data.title}
@@ -70,5 +75,6 @@ const next = allProjects[currentIndex + 1] ?? null;
         </a>
       ) : <span />}
     </div>
+
   </article>
 </BaseLayout>

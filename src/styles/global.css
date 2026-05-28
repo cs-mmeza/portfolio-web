@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-base: #0f1b2d;
-  --color-surface: #162236;
-  --color-accent: #1F4E79;
-  --color-bright: #2d7dd2;
-  --color-primary: #f1f5f9;
-  --color-muted: #94a3b8;
+  --color-base: #070c14;
+  --color-surface: #0b1623;
+  --color-surface-2: #0f1e30;
+  --color-accent: #0d9488;
+  --color-accent-dim: #0f766e;
+  --color-bright: #2dd4bf;
+  --color-primary: #eef4ff;
+  --color-muted: #64748b;
+  --color-muted-2: #94a3b8;
 
-  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-sans: 'Outfit', system-ui, sans-serif;
   --font-family-mono: 'JetBrains Mono', monospace;
 }
 
@@ -21,4 +24,30 @@ html {
 body {
   background-color: var(--color-base);
   color: var(--color-primary);
+}
+
+/* Fluid spring transition for interactive elements */
+a, button, input, textarea {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Section label — teal mono uppercase */
+.section-label {
+  font-family: var(--font-family-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* Dot-grid background for hero */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(45, 212, 191, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Teal ambient glow ring */
+.teal-ring {
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.12), 0 0 28px rgba(45, 212, 191, 0.07);
 }

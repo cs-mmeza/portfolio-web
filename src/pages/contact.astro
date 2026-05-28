@@ -6,85 +6,90 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="Contact"
   description="Get in touch with Mauricio Meza — mechanical designer, mechatronics engineer, Phoenix AZ."
 >
-  <section class="max-w-2xl mx-auto px-6 py-12">
-    <h1 class="text-3xl font-bold text-primary mb-3">Contact</h1>
-    <p class="text-muted mb-10 max-w-md">
+  <section class="max-w-2xl mx-auto px-6 py-14">
+    <p class="section-label mb-3">Get in touch</p>
+    <h1 class="text-4xl font-bold text-primary tracking-tight mb-4">Contact</h1>
+    <p class="text-base text-muted-2 mb-12 max-w-md leading-relaxed">
       Available for mechanical design roles, robotics collaborations, and engineering conversations.
       Reach out directly or use the form below.
     </p>
 
     <!-- Direct links -->
-    <div class="flex flex-col gap-3 mb-12">
+    <div class="flex flex-col gap-4 mb-14 border-l-2 border-accent/30 pl-5">
       <a
         href="mailto:mauriciomeza0110@gmail.com"
-        class="inline-flex items-center gap-3 text-sm text-muted hover:text-bright transition-colors"
+        class="group flex items-center gap-3 text-sm text-muted-2 hover:text-primary transition-colors duration-200"
       >
-        <span class="font-mono text-bright">@</span>
-        mauriciomeza0110@gmail.com
+        <span class="font-mono text-accent text-xs w-4">@</span>
+        <span class="group-hover:text-bright transition-colors">mauriciomeza0110@gmail.com</span>
       </a>
       <a
         href="https://linkedin.com/in/cs-mmeza"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-3 text-sm text-muted hover:text-bright transition-colors"
+        class="group flex items-center gap-3 text-sm text-muted-2 hover:text-primary transition-colors duration-200"
       >
-        <span class="font-mono text-bright">in</span>
-        linkedin.com/in/cs-mmeza
+        <span class="font-mono text-accent text-xs w-4">in</span>
+        <span class="group-hover:text-bright transition-colors">linkedin.com/in/cs-mmeza</span>
       </a>
       <a
         href="https://github.com/cs-mmeza"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-3 text-sm text-muted hover:text-bright transition-colors"
+        class="group flex items-center gap-3 text-sm text-muted-2 hover:text-primary transition-colors duration-200"
       >
-        <span class="font-mono text-bright">gh</span>
-        github.com/cs-mmeza
+        <span class="font-mono text-accent text-xs w-4">gh</span>
+        <span class="group-hover:text-bright transition-colors">github.com/cs-mmeza</span>
       </a>
     </div>
 
-    <!-- mailto form -->
+    <!-- Form -->
     <form
       action="mailto:mauriciomeza0110@gmail.com"
       method="get"
       enctype="text/plain"
-      class="flex flex-col gap-5"
+      class="flex flex-col gap-6"
     >
-      <div>
-        <label for="name" class="block text-xs font-mono text-muted uppercase mb-2">Name</label>
+      <div class="flex flex-col gap-2">
+        <label for="name" class="text-[10px] font-mono text-accent uppercase tracking-widest">Name</label>
         <input
           id="name"
           name="name"
           type="text"
           required
-          class="w-full bg-surface border border-accent/30 rounded px-4 py-2.5 text-sm text-primary placeholder-muted/50 focus:outline-none focus:border-bright transition-colors"
+          class="bg-surface border border-white/[0.08] rounded-lg px-4 py-3 text-sm text-primary placeholder:text-muted/40 focus:outline-none focus:border-bright/40 focus:bg-surface-2 transition-all duration-200"
           placeholder="Your name"
         />
       </div>
-      <div>
-        <label for="subject" class="block text-xs font-mono text-muted uppercase mb-2">Subject</label>
+
+      <div class="flex flex-col gap-2">
+        <label for="subject" class="text-[10px] font-mono text-accent uppercase tracking-widest">Subject</label>
         <input
           id="subject"
           name="subject"
           type="text"
           required
-          class="w-full bg-surface border border-accent/30 rounded px-4 py-2.5 text-sm text-primary placeholder-muted/50 focus:outline-none focus:border-bright transition-colors"
+          class="bg-surface border border-white/[0.08] rounded-lg px-4 py-3 text-sm text-primary placeholder:text-muted/40 focus:outline-none focus:border-bright/40 focus:bg-surface-2 transition-all duration-200"
           placeholder="What's this about?"
         />
       </div>
-      <div>
-        <label for="body" class="block text-xs font-mono text-muted uppercase mb-2">Message</label>
+
+      <div class="flex flex-col gap-2">
+        <label for="body" class="text-[10px] font-mono text-accent uppercase tracking-widest">Message</label>
         <textarea
           id="body"
           name="body"
           rows="5"
           required
-          class="w-full bg-surface border border-accent/30 rounded px-4 py-2.5 text-sm text-primary placeholder-muted/50 focus:outline-none focus:border-bright transition-colors resize-none"
+          class="bg-surface border border-white/[0.08] rounded-lg px-4 py-3 text-sm text-primary placeholder:text-muted/40 focus:outline-none focus:border-bright/40 focus:bg-surface-2 transition-all duration-200 resize-none"
           placeholder="Your message..."
         ></textarea>
       </div>
+
       <button
         type="submit"
-        class="self-start px-6 py-3 bg-accent hover:bg-bright text-white font-semibold rounded transition-colors text-sm"
+        class="self-start px-6 py-3 rounded-lg text-white font-semibold text-sm active:scale-[0.98] transition-transform duration-150"
+        style="background: linear-gradient(135deg, #0e7490 0%, #0d9488 60%, #14b8a6 100%);"
       >
         Open in Mail
       </button>

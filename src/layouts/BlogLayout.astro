@@ -22,34 +22,37 @@ const next = allPosts[currentIndex - 1] ?? null;
 ---
 
 <BaseLayout title={title} description={description}>
-  <article class="max-w-3xl mx-auto px-6 py-12">
-    <a href="/blog" class="text-xs font-mono text-muted hover:text-bright transition-colors">
-      ← Back to Blog
+  <article class="max-w-3xl mx-auto px-6 py-14">
+
+    <a href="/blog" class="inline-flex items-center gap-1.5 text-xs font-mono text-muted hover:text-bright transition-colors duration-200">
+      <svg class="w-3 h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 12L6 8l4-4"/></svg>
+      Back to Blog
     </a>
 
-    <header class="mt-6 mb-10 pb-8 border-b border-accent/20">
-      <div class="flex items-center gap-3 mb-4">
+    <header class="mt-8 mb-10 pb-8 border-b border-white/[0.06]">
+      <div class="flex flex-wrap items-center gap-2 mb-5">
         {tags.map(tag => (
-          <span class="text-xs font-mono bg-accent/10 border border-accent/20 px-2 py-0.5 rounded text-muted">
+          <span class="text-[10px] font-mono bg-accent/[0.08] border border-accent/[0.15] px-2 py-0.5 rounded text-accent/80 uppercase tracking-widest">
             {tag}
           </span>
         ))}
       </div>
-      <h1 class="text-3xl font-bold text-primary mb-3">{title}</h1>
-      <p class="text-sm text-muted font-mono">
+      <h1 class="text-3xl font-bold text-primary tracking-tight mb-3">{title}</h1>
+      <p class="text-sm font-mono text-muted">
         {date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-        · {readingTime} min read
+        <span class="text-white/20 mx-2">·</span>
+        {readingTime} min read
       </p>
     </header>
 
     <div class="prose prose-invert prose-sm max-w-none
-      prose-headings:font-bold prose-headings:text-primary
-      prose-p:text-muted prose-p:leading-relaxed
-      prose-strong:text-primary prose-a:text-bright">
+      prose-headings:font-bold prose-headings:text-primary prose-headings:tracking-tight
+      prose-p:text-muted-2 prose-p:leading-relaxed
+      prose-strong:text-primary prose-a:text-bright prose-a:no-underline hover:prose-a:underline">
       <slot />
     </div>
 
-    <div class="mt-16 pt-8 border-t border-accent/20 flex justify-between gap-4">
+    <div class="mt-16 pt-8 border-t border-white/[0.06] flex justify-between gap-4">
       {prev ? (
         <a href={`/blog/${prev.id}`} class="text-sm text-muted hover:text-bright transition-colors">
           ← {prev.data.title}
@@ -61,5 +64,6 @@ const next = allPosts[currentIndex - 1] ?? null;
         </a>
       ) : <span />}
     </div>
+
   </article>
 </BaseLayout>

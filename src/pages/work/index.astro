@@ -10,31 +10,33 @@ const projects = (await getCollection('work', ({ data }) => !data.draft))
   title="Mechanical Design Work"
   description="7+ years of fixture design, structural assemblies, and manufacturing tooling. CSWP certified."
 >
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <div class="mb-10">
-      <h1 class="text-3xl font-bold text-primary mb-3">Mechanical Design Work</h1>
-      <p class="text-muted max-w-xl">
+  <section class="max-w-6xl mx-auto px-6 py-14">
+    <div class="mb-12">
+      <p class="section-label mb-3">Portfolio</p>
+      <h1 class="text-4xl font-bold text-primary tracking-tight mb-4">Mechanical Design Work</h1>
+      <p class="text-base text-muted-2 max-w-xl leading-relaxed">
         Seven years of industrial fixture design, structural analysis, and precision manufacturing
         tooling across HVAC, aerospace, optical, and display industries.
       </p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {projects.map(project => (
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {projects.map((project, i) => (
         <a
           href={`/work/${project.id}`}
-          class="bg-surface border border-accent/20 rounded-lg p-6 hover:border-bright/40 transition-colors group"
+          class={`group bg-surface border border-white/[0.07] rounded-xl p-6 hover:border-bright/20 hover:bg-surface-2 transition-all duration-300 ${i === 0 ? 'md:col-span-2' : ''}`}
         >
-          <div class="flex items-start justify-between mb-3">
-            <p class="text-xs font-mono text-muted">{project.data.industry}</p>
-            <p class="text-xs font-mono text-muted">{project.data.year}</p>
+          <div class="flex items-start justify-between mb-5">
+            <span class="text-[10px] font-mono text-accent uppercase tracking-widest">{project.data.industry}</span>
+            <span class="text-[10px] font-mono text-muted">{project.data.year}</span>
           </div>
-          <h2 class="text-lg font-semibold text-primary group-hover:text-bright transition-colors mb-2">
+          <h2 class={`font-semibold text-primary group-hover:text-bright transition-colors mb-2 ${i === 0 ? 'text-2xl' : 'text-lg'}`}>
             {project.data.title}
           </h2>
-          <p class="text-sm text-muted mb-4">{project.data.role}</p>
-          <div class="flex flex-wrap gap-2">
-            {project.data.tools.map(tool => (
-              <span class="text-xs font-mono bg-accent/10 border border-accent/20 px-2 py-0.5 rounded text-muted">
+          <p class="text-sm text-muted mb-5 leading-relaxed">{project.data.role}</p>
+          <div class="flex flex-wrap gap-1.5">
+            {project.data.tools.map((tool: string) => (
+              <span class="text-[10px] font-mono bg-accent/[0.08] border border-accent/[0.15] px-2 py-0.5 rounded text-accent/80">
                 {tool}
               </span>
             ))}

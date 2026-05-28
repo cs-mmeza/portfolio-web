@@ -6,20 +6,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="About"
   description="Mauricio Meza — mechanical designer and mechatronics engineer bridging precision manufacturing with robotics."
 >
-  <section class="max-w-3xl mx-auto px-6 py-12">
-    <!-- Avatar -->
-    <div class="flex items-center gap-6 mb-10">
-      <div class="w-24 h-24 rounded-full bg-surface border-2 border-accent/40 flex items-center justify-center flex-shrink-0">
-        <span class="text-2xl font-bold text-accent">MM</span>
+  <section class="max-w-3xl mx-auto px-6 py-14">
+
+    <!-- Avatar + Name -->
+    <div class="flex items-center gap-6 mb-12">
+      <div
+        class="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 teal-ring"
+        style="background: linear-gradient(135deg, #0b1623 0%, #0f2235 100%); border: 1px solid rgba(45, 212, 191, 0.2);"
+      >
+        <span class="text-xl font-bold tracking-tight"
+          style="background: linear-gradient(135deg, #2dd4bf, #67e8f9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          MM
+        </span>
       </div>
       <div>
-        <h1 class="text-3xl font-bold text-primary">Mauricio Meza</h1>
-        <p class="text-muted font-mono text-sm mt-1">Mechanical Designer · Mechatronics Engineer · Phoenix, AZ</p>
+        <h1 class="text-3xl font-bold text-primary tracking-tight">Mauricio Meza</h1>
+        <p class="text-sm font-mono text-bright mt-1">Mechanical Designer · Mechatronics Engineer · Phoenix, AZ</p>
       </div>
     </div>
 
     <!-- Career arc -->
-    <div class="mb-12 prose prose-invert prose-sm max-w-none prose-p:text-muted prose-p:leading-relaxed">
+    <div class="mb-14 space-y-4 text-base text-muted-2 leading-relaxed max-w-prose">
       <p>
         I started as an electrical engineering graduate from ITESCA in Mexico — BSEE in Mechatronics, class of 2013 —
         and spent the next decade working across automation, controls, and eventually precision mechanical design.
@@ -42,24 +49,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- Education -->
     <div class="mb-12">
-      <h2 class="text-xs font-mono text-muted uppercase tracking-widest mb-4">Education</h2>
-      <div class="flex flex-col gap-4">
-        <div class="bg-surface border border-accent/20 rounded-lg p-5">
+      <p class="section-label mb-5">Education</p>
+      <div class="flex flex-col gap-3">
+        <div class="bg-surface border border-white/[0.07] rounded-xl p-5 hover:border-bright/20 transition-colors duration-300">
           <div class="flex items-start justify-between">
             <div>
-              <p class="text-sm font-semibold text-primary">MS Robotics & Autonomous Systems</p>
-              <p class="text-sm text-muted">Arizona State University — EE concentration</p>
+              <p class="text-sm font-semibold text-primary">MS Robotics &amp; Autonomous Systems</p>
+              <p class="text-xs text-muted-2 mt-0.5">Arizona State University — EE concentration</p>
             </div>
-            <span class="text-xs font-mono text-muted">Planned 2027</span>
+            <span class="text-[10px] font-mono text-accent bg-accent/[0.08] border border-accent/20 px-2 py-0.5 rounded">Planned 2027</span>
           </div>
         </div>
-        <div class="bg-surface border border-accent/20 rounded-lg p-5">
+        <div class="bg-surface border border-white/[0.07] rounded-xl p-5 hover:border-bright/20 transition-colors duration-300">
           <div class="flex items-start justify-between">
             <div>
               <p class="text-sm font-semibold text-primary">BSEE — Mechatronics Engineering</p>
-              <p class="text-sm text-muted">ITESCA, Mexico</p>
+              <p class="text-xs text-muted-2 mt-0.5">ITESCA, Mexico</p>
             </div>
-            <span class="text-xs font-mono text-muted">2013</span>
+            <span class="text-[10px] font-mono text-muted">2013</span>
           </div>
         </div>
       </div>
@@ -67,53 +74,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- Certifications -->
     <div class="mb-12">
-      <h2 class="text-xs font-mono text-muted uppercase tracking-widest mb-4">Certifications</h2>
-      <div class="inline-flex items-center gap-3 bg-surface border border-accent/20 rounded-lg px-5 py-4">
-        <img src="/images/cswp-badge.svg" alt="CSWP" class="h-8 w-8 object-contain" />
+      <p class="section-label mb-5">Certifications</p>
+      <div class="inline-flex items-center gap-4 bg-surface border border-white/[0.07] rounded-xl px-5 py-4 hover:border-bright/20 transition-colors duration-300">
+        <img src="/images/cswp-badge.svg" alt="CSWP" class="h-9 w-9 object-contain" />
         <div>
           <p class="text-sm font-semibold text-primary">Certified SolidWorks Professional (CSWP)</p>
-          <p class="text-xs text-muted font-mono">Dassault Systèmes</p>
+          <p class="text-[10px] font-mono text-accent mt-0.5">Dassault Systèmes</p>
         </div>
       </div>
     </div>
 
     <!-- Skills grid -->
     <div>
-      <h2 class="text-xs font-mono text-muted uppercase tracking-widest mb-4">Skills</h2>
+      <p class="section-label mb-5">Skills</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="bg-surface border border-accent/20 rounded-lg p-5">
-          <h3 class="text-xs font-mono text-bright uppercase mb-3">Mechanical Design</h3>
-          <ul class="flex flex-col gap-1">
-            {['SolidWorks (CSWP)', 'AutoCAD', 'GD&T', 'FEA / Simulation', 'Fixture & Tooling Design', 'Sheet Metal', 'Design Tables'].map(s => (
-              <li class="text-sm text-muted">{s}</li>
-            ))}
-          </ul>
-        </div>
-        <div class="bg-surface border border-accent/20 rounded-lg p-5">
-          <h3 class="text-xs font-mono text-bright uppercase mb-3">Electrical / Controls</h3>
-          <ul class="flex flex-col gap-1">
-            {['PLC Programming', 'Mechatronics', 'Automation', 'Sensors & Actuators', 'Circuit Design'].map(s => (
-              <li class="text-sm text-muted">{s}</li>
-            ))}
-          </ul>
-        </div>
-        <div class="bg-surface border border-accent/20 rounded-lg p-5">
-          <h3 class="text-xs font-mono text-bright uppercase mb-3">Software</h3>
-          <ul class="flex flex-col gap-1">
-            {['Python', 'NumPy / SciPy', 'OpenCV', 'PyTorch', 'Git', 'Linux'].map(s => (
-              <li class="text-sm text-muted">{s}</li>
-            ))}
-          </ul>
-        </div>
-        <div class="bg-surface border border-accent/20 rounded-lg p-5">
-          <h3 class="text-xs font-mono text-bright uppercase mb-3">Robotics</h3>
-          <ul class="flex flex-col gap-1">
-            {['ROS 2', 'Control Theory', 'Kinematics', 'Point Cloud Processing (PCL)', 'LiDAR / Depth Sensors'].map(s => (
-              <li class="text-sm text-muted">{s}</li>
-            ))}
-          </ul>
-        </div>
+        {[
+          {
+            label: 'Mechanical Design',
+            color: 'text-bright',
+            items: ['SolidWorks (CSWP)', 'AutoCAD', 'GD&T', 'FEA / Simulation', 'Fixture & Tooling Design', 'Sheet Metal', 'Design Tables'],
+          },
+          {
+            label: 'Electrical / Controls',
+            color: 'text-bright',
+            items: ['PLC Programming', 'Mechatronics', 'Automation', 'Sensors & Actuators', 'Circuit Design'],
+          },
+          {
+            label: 'Software',
+            color: 'text-bright',
+            items: ['Python', 'NumPy / SciPy', 'OpenCV', 'PyTorch', 'Git', 'Linux'],
+          },
+          {
+            label: 'Robotics',
+            color: 'text-bright',
+            items: ['ROS 2', 'Control Theory', 'Kinematics', 'Point Cloud Processing (PCL)', 'LiDAR / Depth Sensors'],
+          },
+        ].map(({ label, items }) => (
+          <div class="bg-surface border border-white/[0.07] rounded-xl p-5 hover:border-bright/20 transition-colors duration-300">
+            <h3 class="text-[10px] font-mono text-accent uppercase tracking-widest mb-4">{label}</h3>
+            <ul class="flex flex-col gap-1.5">
+              {items.map(s => (
+                <li class="text-sm text-muted-2 flex items-center gap-2">
+                  <span class="w-1 h-1 rounded-full bg-accent/50 flex-shrink-0" />
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
+
   </section>
 </BaseLayout>
